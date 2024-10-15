@@ -1,12 +1,14 @@
+// tailwind.config.js
+
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",  // Tailwind will scan all JS/JSX files for classes
+    './src/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
     extend: {
       fontFamily: {
-        Outfit: ["Outfit", "sans-serif"],
-        Ovo: ["Ovo", "serif"],
+        Outfit: ['Outfit', 'sans-serif'],
+        Ovo: ['Ovo', 'serif'],
       },
       colors: {
         lighHover: '#0F1035',

@@ -6,3 +6,20 @@
 body {
   font-family: 'Outfit', sans-serif;
 }
+
+.header {
+  background-image: url('/assets/img/gradient.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-btn {
+  @apply px-6 py-3 border-2 border-black rounded-full hover:bg-black hover:text-white;
+}
+
+/* Dark mode styles */
+.dark .header {
+  background-color: #11001F;
+}
+
+/* Additional custom styles can be added here */
