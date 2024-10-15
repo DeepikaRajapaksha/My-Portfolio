@@ -3,9 +3,12 @@ import { toggleTheme, initializeTheme } from '../utils/themeUtils';
 
 const Navbar = ({ toggleMenu }) => {
   const [scroll, setScroll] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   useEffect(() => {
-    initializeTheme(); // Initialize the theme on page load
+    const themeInitialized = initializeTheme(); 
+    setIsDarkTheme(themeInitialized); 
+
     const handleScroll = () => {
       setScroll(window.scrollY > 50);
     };
@@ -15,23 +18,46 @@ const Navbar = ({ toggleMenu }) => {
     };
   }, []);
 
+  const handleToggleTheme = () => {
+    toggleTheme(); 
+    setIsDarkTheme(!isDarkTheme); 
+  };
+
   return (
     <nav className={`fixed top-0 w-full z-50 ${scroll ? 'bg-white shadow-lg dark:bg-spaceDark' : 'bg-transparent'}`}>
       <div className="flex justify-between items-center px-6 py-4">
-        <img src="/assets/img/logo.png" className="w-40" alt="Logo" />
-        <ul className="hidden md:flex items-center gap-6">
-          <li><a href="#top">Home</a></li>
-          <li><a href="#aboutme">About me</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact me</a></li>
+        <img src={require('../assets/img/logo (2).png')} className="w-40" alt="Logo" />
+        
+        <ul className="hidden md:flex items-center gap-7 text-lg"> {/* Navigation links */}
+          <li><a href="#top" className="hover:text-blue-500">Home</a></li>
+          <li><a href="#aboutme" className="hover:text-blue-500">About Me</a></li>
+          <li><a href="#skills" className="hover:text-blue-500">Skills</a></li>
+          <li><a href="#projects" className="hover:text-blue-500">Projects</a></li>
+          <li><a href="#contact" className="hover:text-blue-500">Contact Me</a></li>
         </ul>
-        <div className="flex items-center">
-          <button onClick={toggleTheme} className="ml-4">
-            <img src={scroll ? '/assets/img/sun.png' : '/assets/img/moon.png'} alt="Toggle Theme" />
+
+        <div className="flex items-center space-x-4">
+        
+          {/* Theme Toggle Button */}
+          <button onClick={handleToggleTheme} className="ml-4">
+            <img 
+              src={isDarkTheme ? require('../assets/img/moon.png') : require('../assets/img/sun.png')} className="w-8" 
+              alt="Toggle Theme" 
+            />
           </button>
+
+          {/* Download CV Button */}
+          <a 
+            href="/assets/CV.pdf"  // Ensure your CV is in the public/assets folder or an external link
+            download 
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          >
+            Download CV
+          </a>
+
+          {/* Mobile Menu Button */}
           <button className="block md:hidden ml-3" onClick={toggleMenu}>
-            <img src="/assets/img/menu.png" alt="Menu Icon" />
+            <img src={require('../assets/img/menu.png')} className="w-10" alt="Menu Icon" />
           </button>
         </div>
       </div>
