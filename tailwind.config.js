@@ -7,7 +7,7 @@ module.exports = {
       colors: {
         spaceDark: '#0B0B16', // Dark space color
         spaceLight: '#1C1C2E', // Slightly lighter space color
-        snowWhite: '#F0F0F0', // Snowy background color
+        snowWhite: '#F0F0F', // Snowy background color
         snowGray: '#D3D3D3', // Light gray for snowy theme
       },
     },
