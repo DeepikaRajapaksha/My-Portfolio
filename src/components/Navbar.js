@@ -36,7 +36,7 @@ const Navbar = ({ toggleMenu }) => {
           <li><a href="#contact" className="hover:text-blue-500">Contact Me</a></li>
         </ul>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-7">
         
           {/* Theme Toggle Button */}
           <button onClick={handleToggleTheme} className="ml-4">
@@ -48,8 +48,8 @@ const Navbar = ({ toggleMenu }) => {
 
           {/* Download CV Button */}
           <a 
-            href="/assets/CV.pdf"  // Ensure your CV is in the public/assets folder or an external link
-            download 
+            href="/assets/Deepika Sewwandi CV.pdf"  // Path to the PDF in the public folder
+            download="Deepika Sewwandi CV.pdf"  // Specify the download file name
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
           >
             Download CV
