@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { toggleTheme, initializeTheme } from '../utils/themeUtils';  // Import functions
+import { toggleTheme, initializeTheme } from '../utils/themeUtils';
 
-const Navbar = ({ toggleMenu }) => {  // Accept toggleMenu as prop
+const Navbar = ({ toggleMenu }) => {
   const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
-    initializeTheme();  // Initialize the theme on page load
+    initializeTheme(); // Initialize the theme on page load
     const handleScroll = () => {
       setScroll(window.scrollY > 50);
     };
@@ -16,9 +16,9 @@ const Navbar = ({ toggleMenu }) => {  // Accept toggleMenu as prop
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 ${scroll ? 'bg-white shadow-lg dark:bg-darkTheme' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 w-full z-50 ${scroll ? 'bg-white shadow-lg dark:bg-spaceDark' : 'bg-transparent'}`}>
       <div className="flex justify-between items-center px-6 py-4">
-        <img src="/assets/img/logo_b.png" className="w-40" alt="Logo" />
+        <img src="/assets/img/logo.png" className="w-40" alt="Logo" />
         <ul className="hidden md:flex items-center gap-6">
           <li><a href="#top">Home</a></li>
           <li><a href="#aboutme">About me</a></li>
@@ -30,7 +30,6 @@ const Navbar = ({ toggleMenu }) => {  // Accept toggleMenu as prop
           <button onClick={toggleTheme} className="ml-4">
             <img src={scroll ? '/assets/img/sun.png' : '/assets/img/moon.png'} alt="Toggle Theme" />
           </button>
-          {/* Mobile Menu Button */}
           <button className="block md:hidden ml-3" onClick={toggleMenu}>
             <img src="/assets/img/menu.png" alt="Menu Icon" />
           </button>

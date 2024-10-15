@@ -2,24 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles */
 body {
   font-family: 'Outfit', sans-serif;
 }
 
-.header {
-  background-image: url('/assets/img/gradient.jpg');
-  background-size: cover;
-  background-position: center;
+/* Dark Theme */
+body.dark {
+  background-color: #0B0B16; /* Space-like dark background */
+  color: #FFFFFF; /* White text for dark theme */
 }
 
-.contact-btn {
-  @apply px-6 py-3 border-2 border-black rounded-full hover:bg-black hover:text-white;
+/* Light Theme */
+body {
+  background-color: #7591f6; /* Snowy white background */
+  color: #000000; /* Dark text for light theme */
 }
-
-/* Dark mode styles */
-.dark .header {
-  background-color: #11001F;
-}
-
-/* Additional custom styles can be added here */

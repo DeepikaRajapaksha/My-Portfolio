@@ -2,7 +2,7 @@ import React from 'react';
 
 const SideMenu = ({ isOpen, closeMenu }) => {
   return (
-    <div className={`fixed right-0 top-0 h-full bg-gray-100 transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+    <div className={`fixed right-0 top-0 h-full bg-gray-100 dark:bg-spaceLight transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
       <button onClick={closeMenu} className="absolute top-6 right-6">
         <img src="/assets/img/close.png" alt="Close" />
       </button>

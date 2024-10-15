@@ -1,30 +1,16 @@
-// tailwind.config.js
-
 module.exports = {
   content: [
     './src/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
     extend: {
-      fontFamily: {
-        Outfit: ['Outfit', 'sans-serif'],
-        Ovo: ['Ovo', 'serif'],
-      },
       colors: {
-        lighHover: '#0F1035',
-        darkHover: '#1A1A1A',
-        darkTheme: '#11001F',
-      },
-      animation: {
-        spin_slow: 'spin 5s linear infinite',
-      },
-      keyframes: {
-        spin: {
-          from: { transform: 'rotate(0deg)' },
-          to: { transform: 'rotate(360deg)' },
-        },
+        spaceDark: '#0B0B16', // Dark space color
+        spaceLight: '#1C1C2E', // Slightly lighter space color
+        snowWhite: '#F0F0F0', // Snowy background color
+        snowGray: '#D3D3D3', // Light gray for snowy theme
       },
     },
   },
-  darkMode: 'class',  // Enable dark mode
+  darkMode: 'class',
 };
