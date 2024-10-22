@@ -37,14 +37,7 @@ const Navbar = ({ toggleMenu }) => {
         </ul>
 
         <div className="flex items-center space-x-7">
-        
-          {/* Theme Toggle Button */}
-          <button onClick={handleToggleTheme} className="ml-4">
-            <img 
-              src={isDarkTheme ? require('../assets/img/moon.png') : require('../assets/img/sun.png')} className="w-8" 
-              alt="Toggle Theme" 
-            />
-          </button>
+      
 
           {/* Download CV Button */}
           <a 

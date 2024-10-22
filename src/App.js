@@ -7,8 +7,11 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import EducationAndVolunteering from './components/EducationAndVolunteering';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -100,6 +103,7 @@ function App() {
       <SideMenu />
       <Header />
       <AboutMe />
+      <EducationAndVolunteering />
       <Skills />
       <Projects />
       <Contact />
