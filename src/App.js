@@ -12,9 +12,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
-
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for SideMenu visibility
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -93,14 +93,18 @@ function App() {
     window.particlesJS('particles-js', particleSettings);
   }, [isDarkTheme]); // Re-run effect when the theme changes
 
+  // Toggle menu visibility
+  const openMenu = () => setIsMenuOpen(true);
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
     <div className="App">
-      {/* Add the div where tsparticles will be displayed */}
+      {/* Particle background */}
       <div id="particles-js" style={{ position: 'absolute', width: '100%', height: '100%', zIndex: '-1' }}></div>
 
       {/* Main Content */}
-      <Navbar />
-      <SideMenu />
+      <Navbar openMenu={openMenu} /> {/* Pass openMenu to Navbar to trigger menu opening */}
+      <SideMenu isOpen={isMenuOpen} closeMenu={closeMenu} /> {/* Pass isOpen and closeMenu props to SideMenu */}
       <Header />
       <AboutMe />
       <EducationAndVolunteering />
