@@ -11,7 +11,11 @@ const AboutMe = () => {
         
         {/* Left side: Profile picture */}
         <div className="flex-shrink-0">
-          <img src={profilePic} alt="Deepika Sewwandi" className="w-100 h-100 lg:w-64 lg:h-64 rounded-full object-cover shadow-lg" />
+          <img 
+            src={profilePic} 
+            alt="Deepika Sewwandi" 
+            className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full object-cover shadow-lg"
+          />
         </div>
         
         {/* Right side: Description */}
@@ -47,4 +51,3 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
-
