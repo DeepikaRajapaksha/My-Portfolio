@@ -37,7 +37,14 @@ const Navbar = ({ toggleMenu }) => {
         </ul>
 
         <div className="flex items-center space-x-7">
-          
+          {/* Theme Toggle Button */}
+          <button onClick={handleToggleTheme} className="ml-3">
+            <img 
+              src={isDarkTheme ? require('../assets/img/moon.png') : require('../assets/img/sun.png')} 
+              alt="Toggle Theme" className="w-10" 
+            />
+          </button>
+
           {/* Download CV Button */}
           <a 
             href="/assets/Deepika Sewwandi CV.pdf"  // Path to the PDF in the public folder
