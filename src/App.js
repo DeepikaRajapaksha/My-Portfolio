@@ -103,7 +103,7 @@ function App() {
       <div id="particles-js" style={{ position: 'absolute', width: '100%', height: '100%', zIndex: '-1' }}></div>
 
       {/* Main Content */}
-      <Navbar openMenu={openMenu} /> {/* Pass openMenu to Navbar to trigger menu opening */}
+      <Navbar toggleMenu={openMenu} /> {/* Pass openMenu to Navbar to trigger menu opening */}
       <SideMenu isOpen={isMenuOpen} closeMenu={closeMenu} /> {/* Pass isOpen and closeMenu props to SideMenu */}
       <Header />
       <AboutMe />
