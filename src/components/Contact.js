@@ -9,7 +9,11 @@ const Contact = () => {
         action="https://api.web3forms.com/submit"
         className="max-w-2xl mx-auto p-6 bg-white bg-opacity-70 shadow-md rounded-lg dark:bg-darkHover"
       >
-        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
+        {/* Web3Forms Access Key */}
+        <input type="hidden" name="access_key" value="fd611f79-4266-4250-b478-586c55338ec3" />
+
+        {/* Redirect to Thank You Page */}
+        <input type="hidden" name="redirect" value="https://deepikasewwandi.vercel.app/thank-you" />
 
         {/* Name Input */}
         <label htmlFor="name" className="block text-lg font-semibold mb-2 text-gray-700 dark:text-white">Your Name</label>

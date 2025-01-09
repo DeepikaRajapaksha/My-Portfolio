@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SideMenu from './components/SideMenu';
 import Header from './components/Header';
@@ -11,6 +12,7 @@ import EducationAndVolunteering from './components/EducationAndVolunteering';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+import ThankYou from './components/ThankYou';
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -98,22 +100,36 @@ function App() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <div className="App">
-      {/* Particle background */}
-      <div id="particles-js" style={{ position: 'absolute', width: '100%', height: '100%', zIndex: '-1' }}></div>
+    <Router>
+      <div className="App">
+        {/* Particle background */}
+        <div id="particles-js" style={{ position: 'absolute', width: '100%', height: '100%', zIndex: '-1' }}></div>
 
-      {/* Main Content */}
-      <Navbar toggleMenu={openMenu} /> {/* Pass openMenu to Navbar to trigger menu opening */}
-      <SideMenu isOpen={isMenuOpen} closeMenu={closeMenu} /> {/* Pass isOpen and closeMenu props to SideMenu */}
-      <Header />
-      <AboutMe />
-      <EducationAndVolunteering />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
+        <Navbar toggleMenu={openMenu} />
+        <SideMenu isOpen={isMenuOpen} closeMenu={closeMenu} />
+
+        {/* Define Routes */}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Header />
+                <AboutMe />
+                <EducationAndVolunteering />
+                <Skills />
+                <Projects />
+                <Contact />
+                <Footer />
+              </>
+            }
+          />
+          <Route path="/thank-you" element={<ThankYou />} /> {/* Add Thank You route */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
+
 
 export default App;
