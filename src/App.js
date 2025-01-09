@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SideMenu from './components/SideMenu';
 import Header from './components/Header';
@@ -11,7 +11,6 @@ import Footer from './components/Footer';
 import EducationAndVolunteering from './components/EducationAndVolunteering';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import ThankYou from './components/ThankYou';
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
