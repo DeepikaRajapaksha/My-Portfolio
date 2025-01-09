@@ -22,7 +22,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Mobile App",
+      title: "AgriZone Mobile App",
       image: '/assets/img/mobile_app.png',
       description: "A mobile application designed to enhance user experience with a streamlined UI.",
       category: 'App',
