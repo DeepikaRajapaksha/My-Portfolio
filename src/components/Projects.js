@@ -3,52 +3,64 @@ import React, { useState } from 'react';
 const Projects = () => {
   const [showMore, setShowMore] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState('All'); // Track selected category
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
   const projects = [
     {
       id: 1,
-      title: "Deepika's Portfolio",
+      title: "My Portfolio: Showcasing Innovation and Design",
       image: require('../assets/img/portfolio.png'),
-      description: "A personal portfolio showcasing my work and skills in web development.",
+      description: `Welcome to my portfolio, where I share my passion for UI/UX design, front-end development, and software development. As a Computing and Information Systems student, I specialize in creating user-centric digital experiences that seamlessly blend functionality with aesthetics.
+
+Throughout my projects, I focus on delivering intuitive designs that not only meet user needs but also enhance the overall experience. From designing innovative platforms like BINVESTO to developing dynamic, interactive web applications, I aim to create solutions that drive growth and improve user satisfaction.
+
+Explore my portfolio to discover my journey in web development and design, and how I continuously refine my skills to craft effective, beautiful digital products.`,
       category: 'Website',
+      githubLink: 'https://github.com/DeepikaRajapaksha/My-Portfolio',
     },
     {
       id: 2,
-      title: "E-commerce Website",
+      title: "BINVESTO: Bridging Businesses and Investors",
       image: require('../assets/img/ecommerce.png'),
-      description: "An e-commerce platform with full shopping cart functionality and payment integration.",
+      description: `BINVESTO is a digital platform designed to connect small-scale businesses in Sri Lanka with potential investors in a fast, secure, and efficient manner.
+
+Key Features:
+
+Simplified Investment Process: Businesses can create and publish investment ads, while investors can browse, filter, and respond seamlessly.
+Comprehensive Support Services: Integrated tools like a Help Center and AI chatbot ensure smooth user experiences and satisfaction.
+Empowering Growth: Focused on fostering economic development by bridging the gap between entrepreneurs and investors.
+This project balances functionality and aesthetics to deliver an intuitive, visually engaging interface that supports both businesses and investors in achieving their goals.`,
       category: 'Figma Design',
+      githubLink: 'https://www.behance.net/gallery/215612497/BINVESTO',
     },
     {
       id: 3,
-      title: "AgriZone Mobile App",
-      image: '/assets/img/mobile_app.png',
-      description: "A mobile application designed to enhance user experience with a streamlined UI.",
+      title: "AgriZone: Revolutionizing Agricultural Trade",
+      image: require('../assets/img/mobile_app.png'),
+      description: `
+AgriZone is a Smart Agricultural Marketplace app designed to bridge the gap between farmers and buyers. By leveraging technology, this platform empowers farmers with real-time market data and predictive tools, enabling them to optimize crop sales and adopt sustainable practices.
+
+Key Features:
+  Market Insights & Predictions: Provides farmers with real-time data on crop prices and demand, helping them determine the best time to sell.
+  Seamless Connections: Facilitates direct communication and transactions between farmers and buyers, fostering transparency and trust.
+  Sustainability Support: Encourages environmentally friendly farming practices through accessible resources and recommendations.
+My Role:
+  Conducted comprehensive user research to understand the needs of farmers and buyers.
+  Designed an intuitive and user-friendly UI/UX that ensures a seamless user experience.
+  Focused on creating a visually appealing interface while maintaining functionality and clarity.
+Impact:
+  AgriZone aims to transform the agricultural landscape by promoting smarter trade practices, reducing market inefficiencies, and strengthening producer-consumer relationships. It reflects my commitment to driving innovation and sustainability in the agriculture sector.
+`,
       category: 'App',
+      githubLink: 'https://www.behance.net/gallery/215800165/AgriZone',
     },
-    {
-      id: 4,
-      title: "Learning Platform",
-      image:'/assets/img/learning_platform.png',
-      description: "An educational platform offering courses and resources to learners worldwide.",
-      category: 'Website',
-    },
-    {
-      id: 5,
-      title: "Figma Design Portfolio",
-      image: '/assets/img/figma_design.png',
-      description: "A collection of design prototypes created using Figma.",
-      category: 'Figma Design',
-    },
+    
   ];
 
-  // Filtered projects based on selected category
   const filteredProjects = projects.filter(
     (project) => selectedCategory === 'All' || project.category === selectedCategory
   );
 
-  // Limit displayed projects unless "Show More" is clicked
   const visibleProjects = showMore ? filteredProjects : filteredProjects.slice(0, 3);
 
   return (
@@ -80,13 +92,11 @@ const Projects = () => {
             className="p-6 bg-gray-100 bg-opacity-70 shadow-md rounded-lg dark:bg-darkHover cursor-pointer"
             onClick={() => setSelectedProject(project)}
           >
-            {/* Project Image */}
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-40 object-cover rounded-md mb-4"
+              className="w-full h-40 object-cover rounded-md mb-5"
             />
-            {/* Project Title */}
             <h3 className="text-2xl font-semibold text-center text-blue-900 dark:text-white">
               {project.title}
             </h3>
@@ -104,27 +114,39 @@ const Projects = () => {
         </button>
       </div>
 
-      {/* Project Detail Modal */}
+      {/* Modal for Project Details */}
       {selectedProject && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full">
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div
+            className="relative bg-white dark:bg-gray-800 rounded-lg shadow-lg max-w-5xl w-full max-h-[80vh] overflow-y-auto p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
+              className="absolute top-4 right-4 text-gray-700 dark:text-gray-300"
               onClick={() => setSelectedProject(null)}
-              className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 float-right"
             >
-              Close
+              ✕
             </button>
-            <h3 className="text-2xl font-semibold text-center text-blue-900 dark:text-white mb-4">
-              {selectedProject.title}
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
-              {selectedProject.description}
-            </p>
+            <h3 className="text-2xl font-semibold text-blue-900 dark:text-white">{selectedProject.title}</h3>
             <img
               src={selectedProject.image}
               alt={selectedProject.title}
-              className="w-full h-40 object-cover rounded-md"
+              className="w-full h-48 object-cover rounded-md mt-4 mb-4"
             />
+            <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap">{selectedProject.description}</p>
+            {selectedProject.githubLink && (
+              <a
+                href={selectedProject.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline block mt-4"
+              >
+                View
+              </a>
+            )}
           </div>
         </div>
       )}
