@@ -21,7 +21,7 @@ const AboutMe = () => {
         {/* Right side: Description */}
         <div className="text-center lg:text-left max-w-xl">
           <p>
-            Hello! I’m Deepika Sewwandi, a UI/UX Designer, Front-End Developer, and Software Developer with a passion for creating intuitive and functional digital experiences. 
+            Hello! I’m Deepika Sewwandi, a Project Management Enthusiast, UI/UX Designer, Front-End Developer, QA Enthusiast and Software Developer with a passion for creating intuitive and functional digital experiences. 
             I specialize in developing user-friendly interfaces and responsive, efficient web applications.
           </p>
           <br />
