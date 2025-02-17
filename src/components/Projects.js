@@ -34,6 +34,23 @@ This project balances functionality and aesthetics to deliver an intuitive, visu
       githubLink: 'https://www.behance.net/gallery/215612497/BINVESTO',
     },
     {
+      id: 4,
+      title: "Re-Design Mobitel Selfcare App",
+      image: require('../assets/img/Mobitel.png'),
+      description: `
+Mobitel Selfcare App – Redesign
+This project focuses on redesigning the Mobitel Selfcare App to improve usability and user experience. The previous design had issues with complex navigation, an overloaded dashboard, and lack of personalization. Through user research, wireframing, prototyping, and usability testing, I developed a cleaner, more intuitive interface.
+
+Key Improvements:
+✅ Simplified navigation for better accessibility
+✅ Clean and modern UI for improved readability
+✅ Dark mode for enhanced user comfort
+✅ Personalized dashboard with quick access to essential features
+`,
+      category: 'Figma Design',
+      githubLink: 'https://www.behance.net/gallery/219476403/Re-Design-Mobitel-Selfcare-App',
+    },
+    {
       id: 3,
       title: "AgriZone: Revolutionizing Agricultural Trade",
       image: require('../assets/img/mobile_app.png'),
