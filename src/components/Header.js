@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { FaLinkedin, FaGithub, FaBehance, FaFacebook } from 'react-icons/fa'; // Import social icons
+import { FaLinkedin, FaGithub, FaBehance} from 'react-icons/fa'; // Import social icons
 import profilePic from '../assets/img/deepika.png'; // Adjust the path accordingly
 
 const Header = () => {
   const [currentText, setCurrentText] = useState('');
   const texts = [
-    'UI/UX Designer',
-    'Front-End Developer',
-    'Software Developer',
-    'QA Enthusiast',
-    'Project Management Enthusiast',
+    'Designer',
+    'Creative Thinker',
+    'Problem Solver',
+    'Workflow Planner',
     'Lifelong Learner',
   ];
 
@@ -46,7 +45,7 @@ const Header = () => {
       {/* Content section */}
       <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold dark:text-white">
-          Hi! I'm Deepika Sewwandi
+          Hello! I'm Deepika Sewwandi
         </h1>
         
         {/* Typing Effect */}
@@ -84,14 +83,7 @@ const Header = () => {
           >
             <FaBehance />
           </a>
-          <a 
-            href="https://www.facebook.com/profile.php?id=100083802640181&mibextid=ZbWKwL" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="hover:text-blue-600"
-          >
-            <FaFacebook />
-          </a>
+        
         </div>
 
         <div className="flex gap-4 mt-6">
