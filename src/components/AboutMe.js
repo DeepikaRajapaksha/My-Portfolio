@@ -21,17 +21,19 @@ const AboutMe = () => {
         {/* Right side: Description */}
         <div className="text-center lg:text-left max-w-xl">
           <p>
-            Hello! I’m Deepika Sewwandi, a Project Management Enthusiast, UI/UX Designer, Front-End Developer, QA Enthusiast and Software Developer with a passion for creating intuitive and functional digital experiences. 
-            I specialize in developing user-friendly interfaces and responsive, efficient web applications.
+          Hello! I'm Deepika Sewwandi, passionate about crafting seamless and engaging digital experiences. With a strong focus on 
+          user-centered design and efficient development, I enjoy transforming ideas into functional and visually appealing solutions.
           </p>
           <br />
           <p>
-            I'm currently pursuing a Bachelor's degree in Computing and Information at the Faculty of Computing, Sabaragamuwa University, where I am expanding my skills in web development, 
-            software design, and technology-driven problem-solving. My academic journey equips me with the latest industry knowledge and strengthens my technical expertise.
+          Currently pursuing a Bachelor's degree in Computing and Information at the Faculty of Computing, Sabaragamuwa University, 
+          I continuously expand my knowledge in web development, software design, and technology-driven problem-solving. 
+          My academic journey, combined with hands-on experience, helps me stay updated with industry trends and sharpen my technical expertise.
           </p>
           <br />
           <p>
-            Driven by innovation and attention to detail, I am always eager to refine my skills and contribute to impactful digital solutions.
+          I thrive on innovation, creativity, and attention to detail, always eager to explore new possibilities 
+          and contribute to meaningful digital solutions.
           </p>
 
           {/* Download CV Button */}
