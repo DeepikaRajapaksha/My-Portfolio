@@ -54,7 +54,7 @@ const EducationAndVolunteering = () => {
             <div className="mb-8 flex justify-between items-center w-full">
               <div className="w-5/12 text-right pr-8">
                 <h3 className="text-2xl font-bold">Ordinary Level</h3>
-                <p className="italic">M/R Deniyaya Rajapaksha M.V, Deniyaya</p>
+                <p className="italic">MR/ Deniyaya Rajapaksha M.V, Deniyaya</p>
                 <p>2006 - 2016</p>
                 <p>Achieved outstanding results with 8As and 1C, showcasing a strong academic foundation and commitment to excellence.</p>
               </div>
